@@ -7,7 +7,7 @@ export default function Header(params) {
             <div className={"Header-main"}>
                 <div>Home Food</div>
                 <div >
-                    <a onClick={() => { }} href="#" className="cart-main" style={{ textDecoration: "none" }}><img src={cart1} className="cart-image" />Cart {count}</a></div>
+                    <a onClick={() => { }} href="#" className="cart-main" style={{ textDecoration: "none" }}><img src={cart1} className="cart-image" /><span>Cart {count}</span></a></div>
             </div>
 
         </>
