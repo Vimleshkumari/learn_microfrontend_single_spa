@@ -1,6 +1,13 @@
+
+// import foodItems from "../utils/items.json"
+import FoodContext from '../context/FoodContext';
+import { useContext } from "react";
+import { Box, Flex, Image, Text, Button } from '@chakra-ui/react';
+
 export default function AddMenu(params) {
+    const { foodItems, removeFromCart, addToCart } = useContext(FoodContext);
 
-
+    // console.log("json", foodItems);
 
     let items = [{
         id: 1,
@@ -27,30 +34,39 @@ export default function AddMenu(params) {
         isGood: true
     }]
 
-    const addItem = (e) => {
-        alert("Item is added")
-    }
-    const removeItem = (e) => {
-        alert("Item is removed")
-    }
+    const importAllImages = (context) => {
+        let images = {};
+        context.keys().forEach((item) => {
+            images[item.replace('./', '')] = context(item); // Store image paths in the 'images' object
+        });
+        return images;
+    };
+
+    // Import all images from the 'assets' folder inside 'src'
+    const images = importAllImages(require.context('../Assets', false, /\.(png|jpe?g|svg)$/));
+
 
     return (
         <>
-            <div className="main-menu-header">
-                <div >Heyy your cart is hungary...</div>
-                <div className="menu-card">
-                    {items?.map((item, ind) => {
-                        return <div className="menu-items" key={ind}>
-                            <div style={{ width: "50px" }}>{item.name}</div>
-                            <div style={{ width: "50px" }} >{item.cost}  </div>
-                            <div style={{ border: "2px solid  green", padding: "1px 8px", marginLeft: "5px" }} onClick={() => { addItem() }}>+</div>
-                            <div style={{ border: "2px solid red", padding: "1px 8px", marginLeft: "5px" }} onClick={() => { removeItem() }}>-</div>
+            <Box className="main-menu-header">
+                <Box >Heyy your cart is hungary...</Box>
 
-                        </div>
-                        // </div>
-                    })}
-                </div>
-            </div>
+                {foodItems?.map((item, ind) => {
+                    return <Box className="menu-card">
+                        <Box className="menu-items" key={ind}>
+                            <Box width={{sm:"100%",md: 80 }}
+                            ><Image src={images[item.url]} width={{sm:"100%",md: 80 }}F/></Box>
+                            <Box style={{ display: "flex", justifyContent: "center" }}>
+                                <Box style={{ width: "150px" }}>{item.name}</Box>
+                                <Box style={{ width: "50px" }} >{item.cost}  </Box>
+                                <Box style={{ border: "2px solid  green", padding: "1px 8px", marginLeft: "5px" }} onClick={() => addToCart(item)}>+</Box>
+                                <Box style={{ border: "2px solid red", padding: "1px 8px", marginLeft: "5px" }} onClick={() => { removeFromCart(item.id) }}>-</Box>
+                            </Box>
+                        </Box>
+                    </Box>
+                })}
+
+            </Box>
 
         </>
     )
