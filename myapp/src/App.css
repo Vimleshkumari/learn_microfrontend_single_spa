@@ -2,7 +2,7 @@
   text-align: center;
    width: 100% !important;
    font-family: cursive;
-   overflow: auto;
+   /* overflow: auto; */
 }
 
 .App-header {
