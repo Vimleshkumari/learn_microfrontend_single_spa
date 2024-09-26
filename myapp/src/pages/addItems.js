@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { Box, Flex, Image, Text, Button } from '@chakra-ui/react';
 
 export default function AddMenu(params) {
-    const { foodItems, removeFromCart, addToCart } = useContext(FoodContext);
+    const { foodItems, removeFromCart, addToCart ,isCartClicked} = useContext(FoodContext);
 
     // console.log("json", foodItems);
 
@@ -55,7 +55,7 @@ export default function AddMenu(params) {
                     return <Box className="menu-card">
                         <Box className="menu-items" key={ind}>
                             <Box width={{sm:"100%",md: 80 }}
-                            ><Image src={images[item.url]} width={{sm:"100%",md: 80 }}F/></Box>
+                            ><Image src={images[item.url]} width={{sm:"100%",md: 80 }}/></Box>
                             <Box style={{ display: "flex", justifyContent: "center" }}>
                                 <Box style={{ width: "150px" }}>{item.name}</Box>
                                 <Box style={{ width: "50px" }} >{item.cost}  </Box>

@@ -4,6 +4,7 @@ import Header from "../pages/header";
 import SubHeader from "../pages/subHeader";
 
 function LandingPage(params) {
+  console.log(params,"dmcnkjdn cjks");
   return (
     <>
         <Header />

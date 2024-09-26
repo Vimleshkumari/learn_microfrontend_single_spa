@@ -6,10 +6,11 @@ import Cart from "./cart";
 // import {useNavigate} from 'react-dom'
 
 export default function Header(params) {
-    const { cart } = useContext(FoodContext);
+    const { cart, cartClicked , isCartClicked} = useContext(FoodContext);
     // const navigate = useNavigate();
 
     const callCart = () => {
+        cartClicked(!isCartClicked)
         console.log("cart callled");
         // navigate('/cart')
         // return <Cart/>
@@ -24,6 +25,7 @@ export default function Header(params) {
                     <img src={cart1} className="cart-image" width={{ sm:10, md: 40 }}
                     /><span >Cart {cart.length}</span></div>
             </div>}
+            {isCartClicked?? <Cart/>}
 
 
         </>
