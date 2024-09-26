@@ -1,0 +1,72 @@
+ [
+    {
+        "id": 1,
+        "name": "Pakoda",
+        "cost": 15,
+        "isGood": true,
+        "url": "pakoda.jpg"
+
+    },
+    {
+        "id": 2,
+        "name": "Vada pav",
+        "cost": 12,
+        "isGood": true,
+        "url":"vada-pav.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Dahi Puri",
+        "cost": 40,
+        "isGood": true,
+        "url":"dahi-puri.jpg"
+
+    },
+    {
+        "id": 4,
+        "name": "Tandoori Chicken",
+        "cost": 200,
+        "isGood": true,
+        "url":"tandoori-chicken.jpg"
+
+    },
+    {
+        "id": 5,
+        "name": "Masala dosa",
+        "cost": 80,
+        "isGood": true,
+        "url":"masala-dosa.jpg"
+
+    },
+    {
+        "id": 6,
+        "name": "Idli",
+        "cost": 30,
+        "isGood": true,
+        "url":"idli.jpg"
+
+    },
+    {
+        "id": 7,
+        "name": "Rasmalai",
+        "cost": 45,
+        "isGood": true,
+        "url":"ras-malai.jpg"
+
+    },
+    {
+        "id": 8,
+        "name": "Lassi",
+        "cost": 60,
+        "isGood": true,
+        "url":"lassi.jpg"
+
+    },
+    {
+        "id": 9,
+        "name": "Gulab jamun",
+        "cost": 30,
+        "isGood": true,
+        "url":"gulab-jamun.jpg"
+
+    }]
